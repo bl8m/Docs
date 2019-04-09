@@ -109,6 +109,7 @@ class Product extends Model
 > You DO NOT need to cast translatable string columns as array/json/object in the Eloquent model. From Eloquent's perspective they're strings. So:
 > - you _should NOT_ cast ```name```; it's a string in Eloquent, even though it's stored as JSON in the db by SpatieTranslatable;
 > - you _should_ cast ```extras``` to ```array```, if each translation stores an array of some sort;
+> You DO NOT use ```translations``` as column name because it breaks the accessor (there is a class method named getTranslations)
 
 Change the languages available to translate to/from, in your crud config file (```config/backpack/crud.php```). By default there are quite a few enabled (English, French, German, Italian, Romanian).
 
